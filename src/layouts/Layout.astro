@@ -3,11 +3,11 @@ export interface Props {
 	title: string;
 }
 
-// import "@fontsource/raleway"
 import "@fontsource/raleway/variable-full.css";
 
 
 const { title } = Astro.props;
+
 ---
 
 <!DOCTYPE html>
@@ -19,9 +19,23 @@ const { title } = Astro.props;
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 	</head>
-	<body>
-		<slot />
+	<body class="dark:bg-zinc-900">
+			<slot />
 	</body>
+	<script is:inline>
+  const theme = (() => {
+    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
+      return localStorage.getItem("theme");
+    }
+  })();
+
+  if (theme === "light") {
+    document.documentElement.classList.remove("dark");
+  } else {
+    document.documentElement.classList.add("dark");
+  }
+  window.localStorage.setItem("theme", theme);
+	</script>
 </html>
 <style>
 

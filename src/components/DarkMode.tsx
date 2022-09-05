@@ -1,13 +1,26 @@
-import { useAtom } from "jotai"
-import { darkModeToggle } from "./DarkmodeToggleAtom"
+import SunSvg from "../images/Sun.svg"
+import MoonSvg from "../images/Moon.svg"
+import { useEffect, useState } from 'react';
+
 
 export default function DarkMode() {
-    const [currentMode, toggleDarkMode] = useAtom(darkModeToggle)
+
+    const [theme, setTheme] = useState<string>(localStorage.getItem("theme") ?? "light")
+
+    const toggleDarkMode = () => {
+        setTheme((prev) => prev === "dark"? "light": "dark")
+    }
+
+    useEffect(() => {
+    if (theme === "dark") {
+        document.documentElement.classList.add("dark");
+    } else {
+        document.documentElement.classList.remove("dark");
+    }
+    localStorage.setItem("theme", theme);
+    },[theme])
 
     return (
-        <div className="">
-            <button onClick={toggleDarkMode}>Clickme</button>
-            {currentMode?"true":"false"}
-        </div>
+        <button className={theme &&"rounded-md p-1 border-2 dark:border-zinc-200 border-zinc-500"} onClick={toggleDarkMode}>{theme==="light"?<img height={"24"} width={"24"} src={SunSvg}/>:<img height={"24"} width={"24"} src={MoonSvg}/>}</button>
     )
 }
