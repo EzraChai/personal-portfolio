@@ -7,7 +7,6 @@ import netlify from '@astrojs/netlify/edge-functions';
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind()],
-  site: 'https://ezrachai.github.io',
   output: "server",
   adapter: netlify()
 });
