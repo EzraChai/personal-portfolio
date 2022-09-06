@@ -6,7 +6,7 @@
     "dev": "astro dev",
     "start": "astro dev",
     "build": "astro build",
-    "preview": "astro preview",
+    "preview": "deno run --allow-net --allow-read --allow-env ./dist/server/entry.mjs",
     "astro": "astro"
   },
   "dependencies": {
@@ -15,6 +15,7 @@
     "react-icons": "^4.4.0"
   },
   "devDependencies": {
+    "@astrojs/deno": "^1.0.1",
     "@astrojs/react": "^1.1.1",
     "@astrojs/tailwind": "^1.0.0",
     "@types/react": "^18.0.18",
