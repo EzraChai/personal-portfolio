@@ -6,7 +6,6 @@
 
 ![basics](https://user-images.githubusercontent.com/4677417/186188965-73453154-fdec-4d6b-9c34-cb35c248ae5b.png)
 
-
 ## 🚀 Project Structure
 
 Inside of your Astro project, you'll see the following folders and files:
@@ -47,3 +46,5 @@ All commands are run from the root of the project, from a terminal:
 ## 👀 Want to learn more?
 
 Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fcd8f766-445b-4c70-8646-78387763052d/deploy-status)](https://app.netlify.com/sites/ezrachai/deploys)
