@@ -8,6 +8,6 @@ import image from "@astrojs/image";
 // https://astro.build/config
 export default defineConfig({
   integrations: [react(), tailwind(), image()],
-  output: "server",
-  adapter: deno()
+  site: 'https://ezrachai.github.io',
+  base: "/"
 });
