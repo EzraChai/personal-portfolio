@@ -8,5 +8,4 @@ import image from "@astrojs/image";
 export default defineConfig({
   integrations: [react(), tailwind(), image()],
   site: 'https://EzraChai.github.io',
-  base: "/"
 });
