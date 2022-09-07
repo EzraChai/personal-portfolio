@@ -21,6 +21,6 @@ export default function DarkMode() {
     },[theme])
 
     return (
-        <button className={theme &&"rounded-md p-1 border-2 dark:border-zinc-200 border-zinc-500"} onClick={toggleDarkMode}>{theme==="light"?<img height={"24"} width={"24"} src={SunSvg}/>:<img height={"24"} width={"24"} src={MoonSvg}/>}</button>
+        <button className={theme &&"rounded-md p-1 border-2 dark:border-zinc-200 border-zinc-500"} onClick={toggleDarkMode}>{theme==="light"?<img height={"20"} width={"20"} src={SunSvg}/>:<img height={"20"} width={"20"} src={MoonSvg}/>}</button>
     )
 }
