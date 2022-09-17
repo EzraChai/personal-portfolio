@@ -5,5 +5,5 @@ module.exports = {
     extend: {},
   },
   darkMode: "class",
-  plugins: [],
+  plugins: [require("autoprefixer")],
 };
