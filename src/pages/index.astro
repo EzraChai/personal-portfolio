@@ -1,6 +1,7 @@
 ---
 import Layout from "../layouts/Layout.astro";
 import Work from "../components/Work.astro";
+import Contact from "../components/Contact.astro";
 
 const response = await fetch(import.meta.env.GRAPHCMS_URL, {
   method: "POST",
@@ -11,23 +12,24 @@ const response = await fetch(import.meta.env.GRAPHCMS_URL, {
   body: JSON.stringify({
     query: `
         {
-          sections {
-			image {
-				width
-				height
-				url
-			}
-			title
-			description
-			}
+          	sections {
+				image {
+					width
+					height
+					url
+					}
+				title
+				description
+		}
 			works{
 				url
 				body
 				header
+				stack
 				image{
-				url
-				width
-				height
+					url
+					width
+					height
 				}
 			}
         }
@@ -52,6 +54,9 @@ const works = homePage.data.works;
         Hi there, I'm a Frontend Engineer & Student focused on application for
         brands that like to have fun.
       </p>
+      <div class="flex mt-10 gap-1 justify-center">
+        <Contact />
+      </div>
     </div>
     <div class="pt-14 pb-6 mb-20 lg:py-20 overflow-hidden col-span-2">
       <div class="container flex px-4 justify-center">

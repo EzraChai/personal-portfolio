@@ -1,5 +1,5 @@
 ---
-const { body, title, link, image } = Astro.props;
+const { body, title, link, image, stack } = Astro.props;
 ---
 
 <div
@@ -10,9 +10,18 @@ const { body, title, link, image } = Astro.props;
       {title}
     </h3>
     <p
-      class="font-medium py-4 leading-relaxed traking-wider text-md lg:text-lg antialiased text-zinc-600 dark:text-zinc-400">
+      class="font-medium py-4 leading-relaxed text-md lg:text-lg antialiased text-zinc-600 dark:text-zinc-400">
       {body}
     </p>
+    <div class="flex justify-center lg:justify-start gap-2 mb-6">
+      {
+        stack.map((tech: string) => (
+          <div class="rounded-md bg-black p-2 text-xs font-bold tracking-wider text-zinc-100">
+            {tech}
+          </div>
+        ))
+      }
+    </div>
     <a
       class="group flex lg:justify-start justify-center mr-2"
       target="_blank"
@@ -37,14 +46,14 @@ const { body, title, link, image } = Astro.props;
   </div>
   <div
     class="order-1 lg:order-1 border-2 rounded-md dark:border-zinc-200 border-zinc-600 overflow-hidden">
+    <a href={link} target="_blank">
+      <img
+        class=""
+        width={image.width}
+        height={image.height}
+        src={image.url}
+        alt={title}
+      />
+    </a>
   </div>
-  <a href={link} target="_blank">
-    <img
-      class=""
-      width={image.width}
-      height={image.height}
-      src={image.url}
-      alt={title}
-    />
-  </a>
 </div>
