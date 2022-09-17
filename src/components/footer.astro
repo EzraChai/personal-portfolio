@@ -3,13 +3,13 @@ import Contact from "./Contact.astro";
 ---
 
 <footer class="lg:max-w-7xl mx-auto">
-  <hr class="dark:text-zinc-200" />
-  <div class="flex justify-between items-center py-4 lg:py-8">
-    <div class="flex items-center px-4">
-      <Contact />
+    <hr class="dark:text-zinc-200" />
+    <div class="flex justify-between items-center py-4 lg:py-8">
+        <div class="flex items-center px-4">
+            <Contact />
+        </div>
+        <h6 class="px-4 text-xs lg:text-sm dark:text-zinc-300 text-zinc-500">
+            © {new Date().getFullYear()} — All Rights Reserved
+        </h6>
     </div>
-    <h6 class="px-4 text-xs lg:text-sm dark:text-zinc-300 text-zinc-500">
-      © {new Date().getFullYear()} — All Rights Reserved
-    </h6>
-  </div>
 </footer>
