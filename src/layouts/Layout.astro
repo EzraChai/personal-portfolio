@@ -1,51 +1,49 @@
 ---
 export interface Props {
-	title: string;
+  title: string;
 }
 
 import "@fontsource/raleway/variable-full.css";
 import Navbar from "../components/navbar.astro";
 import Footer from "../components/footer.astro";
 
-
 const { title } = Astro.props;
-
 ---
 
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="generator" content={Astro.generator} />
-		<title>{title}</title>
-	</head>
-	<body class="dark:bg-zinc-900">
-		<Navbar/>
-			<slot />
-		<Footer/>
-	</body>
-	<script is:inline>
-  const theme = (() => {
-    if (typeof localStorage !== "undefined" && localStorage.getItem("theme")) {
-      return localStorage.getItem("theme");
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="dark:bg-zinc-900">
+    <Navbar />
+    <slot />
+    <Footer />
+    <script is:inline>
+      const theme = (() => {
+        if (
+          typeof localStorage !== "undefined" &&
+          localStorage.getItem("theme")
+        ) {
+          return localStorage.getItem("theme");
+        }
+      })();
+
+      if (theme === "light") {
+        document.documentElement.classList.remove("dark");
+      } else {
+        document.documentElement.classList.add("dark");
+      }
+      window.localStorage.setItem("theme", theme);
+    </script>
+  </body>
+  <style>
+    html {
+      font-family: "Raleway", system-ui, sans-serif !important;
     }
-  })();
-
-  if (theme === "light") {
-    document.documentElement.classList.remove("dark");
-  } else {
-    document.documentElement.classList.add("dark");
-  }
-  window.localStorage.setItem("theme", theme);
-	</script>
-
+  </style>
 </html>
-<style>
-
-	html {
-		font-family: "Raleway", system-ui, sans-serif !important;
-	}
-
-</style>

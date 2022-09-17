@@ -1,13 +1,17 @@
 ---
-    import DarkMode from "./DarkMode.tsx"
+import DarkMode from "./DarkMode.tsx";
 ---
 
 <nav class="lg:max-w-7xl mx-auto mb-5 lg:mb-10">
-    <div class=" py-4 lg:py-8 flex justify-between">
-        <h1 class="dark:text-white font-[800] px-3 lg:px-8 tracking-tight text-xl lg:text-2xl">ezrachai</h1>
-        <div class="flex px-3 lg:px-8">
-            <DarkMode client:only="react"/>
-        </div>
+  <div class="py-4 lg:py-8 flex justify-between">
+    <h1
+      class="dark:text-white font-[800] px-3 lg:px-8 tracking-tight text-xl lg:text-2xl"
+    >
+      ezrachai
+    </h1>
+    <div class="flex px-3 lg:px-8">
+      <DarkMode client:only="react" />
     </div>
-    <hr class="dark:text-zinc-300">
+  </div>
+  <hr class="dark:text-zinc-300" />
 </nav>
