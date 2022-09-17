@@ -5,7 +5,7 @@ const { body, title, link, image, stack } = Astro.props;
 <div
     class="grid lg:grid-cols-2 content-center max-w-7xl mx-auto p-4 pt-6 lg:pt-10 pb-10 lg:pb-16 dark:text-zinc-100">
     <div
-        class="order-last lg:order-1 mt-10 lg:mt-0 lg:w-5/6 mb-10 mx-auto text-center lg:text-left">
+        class="flex flex-col justify-center order-last lg:order-1 mt-10 lg:mt-0 lg:w-5/6 mb-10 lg:mb-0 mx-auto text-center lg:text-left">
         <h3 class="text-2xl lg:text-3xl font-bold leading-[1.2] capitalize">
             {title}
         </h3>
@@ -16,7 +16,7 @@ const { body, title, link, image, stack } = Astro.props;
         <div class="flex justify-center lg:justify-start gap-2 mb-6">
             {
                 stack.map((tech: string) => (
-                    <div class="rounded-md bg-black p-2 text-xs font-bold tracking-wider text-zinc-100">
+                    <div class="dark:border:white rounded-md border-2 border-black bg-black px-2 py-1 text-xs font-bold tracking-wider text-zinc-100 transition hover:cursor-default hover:bg-white hover:text-zinc-800 dark:border-white dark:bg-zinc-100 dark:text-zinc-800 dark:hover:bg-zinc-800 dark:hover:text-zinc-100">
                         {tech}
                     </div>
                 ))
@@ -26,17 +26,17 @@ const { body, title, link, image, stack } = Astro.props;
             href={link}
             rel="external"
             target="_blank"
-            class="group mt-2 rounded-md border-2 dark:border-zinc-200 border-black hover:bg-black dark:hover:bg-zinc-200 py-2 px-4 transition font-bold hover:text-white dark:hover:text-zinc-700 flex justify-center items-center w-4/5 mx-auto lg:mx-0 lg:w-1/2">
+            class="group my-2 rounded-md border-2 dark:border-zinc-200 border-black hover:bg-black dark:hover:bg-zinc-200 py-2 px-4 transition font-bold hover:text-white dark:hover:text-zinc-700 flex justify-center items-center w-4/5 mx-auto lg:mx-0 lg:w-1/2">
             See the live website
-            <span class="ml-2"
-                ><svg
+            <span class="ml-2">
+                <svg
                     class="dark:fill-white group-hover:fill-zinc-100 dark:group-hover:fill-zinc-800 transition group-hover:translate-x-1.5"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
                     width="24"
                     height="24"
                     ><path fill="none" d="M0 0h24v24H0z"></path><path
-                        d="M16.172 11l-5.364-5.364 1.414-1.414L20 12l-7.778 7.778-1.414-1.414L16.172 13H4v-2z"
+                        d="M10 6v2H5v11h11v-5h2v6a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h6zm11-3v8h-2V6.413l-7.793 7.794-1.414-1.414L17.585 5H13V3h8z"
                     ></path>
                 </svg>
             </span>
@@ -44,9 +44,8 @@ const { body, title, link, image, stack } = Astro.props;
     </div>
     <div
         class="order-1 lg:order-1 border-2 rounded-md dark:border-zinc-200 border-zinc-600 overflow-hidden">
-        <a href={link} target="_blank">
+        <a class="object-contain" href={link} target="_blank">
             <img
-                class=""
                 width={image.width}
                 height={image.height}
                 src={image.url}
