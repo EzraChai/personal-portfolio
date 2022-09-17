@@ -1,6 +1,14 @@
 ---
 import WorkExample from "./WorkExample.astro";
 const { works } = Astro.props;
+
+export interface WorkInterface {
+  header: string;
+  image: any;
+  body: string;
+  url: string;
+  stack: string[];
+}
 ---
 
 <div
@@ -9,7 +17,7 @@ const { works } = Astro.props;
 </div>
 <div class="pt-6 lg:pt-20 lg:pb-32">
   {
-    works.map((work: any) => (
+    works.map((work: WorkInterface) => (
       <WorkExample
         title={work.header}
         link={work.url}
