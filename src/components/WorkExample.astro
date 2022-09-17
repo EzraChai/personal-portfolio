@@ -3,25 +3,20 @@ const { body, title, link, image } = Astro.props;
 ---
 
 <div
-  class="grid lg:grid-cols-2 content-center max-w-7xl mx-auto p-4 pt-6 lg:pt-10 pb-10 lg:pb-16 dark:text-zinc-100"
->
+  class="grid lg:grid-cols-2 content-center max-w-7xl mx-auto p-4 pt-6 lg:pt-10 pb-10 lg:pb-16 dark:text-zinc-100">
   <div
-    class="order-last lg:order-1 mt-10 lg:mt-0 lg:w-5/6 mb-10 mx-auto text-center lg:text-left"
-  >
+    class="order-last lg:order-1 mt-10 lg:mt-0 lg:w-5/6 mb-10 mx-auto text-center lg:text-left">
     <h3 class="text-2xl lg:text-3xl font-bold leading-[1.2]">{title}</h3>
     <p
-      class="py-4 font-medium leading-relaxed traking-wider text-md lg:text-lg antialiased text-zinc-600 dark:text-zinc-400"
-    >
+      class="font-medium py-4 leading-relaxed traking-wider text-md lg:text-lg antialiased text-zinc-600 dark:text-zinc-400">
       {body}
     </p>
     <a
       class="group flex lg:justify-start justify-center mr-2"
       target="_blank"
-      href={link}
-    >
+      href={link}>
       <button
-        class="mt-2 rounded-md border-2 dark:border-zinc-200 border-black group-hover:bg-black dark:group-hover:bg-zinc-200 py-2 px-4 transition font-bold group-hover:text-white dark:group-hover:text-zinc-700 flex"
-      >
+        class="mt-2 rounded-md border-2 dark:border-zinc-200 border-black group-hover:bg-black dark:group-hover:bg-zinc-200 py-2 px-4 transition font-bold group-hover:text-white dark:group-hover:text-zinc-700 flex">
         See the live website
         <span class="ml-2"
           ><svg
@@ -39,10 +34,15 @@ const { body, title, link, image } = Astro.props;
     </a>
   </div>
   <div
-    class="order-1 lg:order-1 border-2 rounded-md dark:border-zinc-200 border-zinc-600 overflow-hidden"
-  >
-    <a href={link} target="_blank">
-      <img class="" src={image.url} alt={title} />
-    </a>
+    class="order-1 lg:order-1 border-2 rounded-md dark:border-zinc-200 border-zinc-600 overflow-hidden">
   </div>
+  <a href={link} target="_blank">
+    <img
+      class=""
+      width={image.width}
+      height={image.height}
+      src={image.url}
+      alt={title}
+    />
+  </a>
 </div>
