@@ -53,6 +53,7 @@ const { body, title, link, image, stack } = Astro.props;
             referrerpolicy="no-referrer"
             rel="external">
             <Image
+                quality={50}
                 format="webp"
                 width={image.width}
                 height={image.height}
