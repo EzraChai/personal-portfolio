@@ -22,15 +22,26 @@ export default function DarkMode() {
 
     return (
         <button
+            aria-label="Dark mode toggle button"
             className={
                 theme &&
                 "rounded-md border-2 border-zinc-600 p-1 dark:border-zinc-200 "
             }
             onClick={toggleDarkMode}>
             {theme === "light" ? (
-                <img height={"20"} width={"20"} src={SunSvg} />
+                <img
+                    alt={"Image of the sun"}
+                    height={"20"}
+                    width={"20"}
+                    src={SunSvg}
+                />
             ) : (
-                <img height={"20"} width={"20"} src={MoonSvg} />
+                <img
+                    alt={"Image of the moon"}
+                    height={"20"}
+                    width={"20"}
+                    src={MoonSvg}
+                />
             )}
         </button>
     );
