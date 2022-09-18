@@ -14,10 +14,10 @@ const { body, title, link, image, stack } = Astro.props;
             class="font-medium py-4 leading-relaxed text-md lg:text-lg antialiased text-zinc-600 dark:text-zinc-400">
             {body}
         </p>
-        <div class="flex justify-center lg:justify-start gap-2 mb-6">
+        <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
             {
                 stack.map((tech: string) => (
-                    <div class=" bg-orange-web rounded-md px-2 py-1 text-xs font-bold tracking-wider text-zinc-800 transition hover:cursor-default hover:bg-white hover:text-zinc-800 dark:hover:bg-zinc-900 dark:hover:text-zinc-100">
+                    <div class="rounded-md bg-orange-web px-2 py-1 text-xs font-bold tracking-wider text-zinc-800 transition hover:cursor-default hover:bg-white hover:text-zinc-800 dark:hover:bg-zinc-900 dark:hover:text-zinc-100">
                         {tech}
                     </div>
                 ))
