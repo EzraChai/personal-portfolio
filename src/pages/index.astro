@@ -43,17 +43,18 @@ const works = homePage.data.works;
 ---
 
 <Layout title="ezrachai">
-    <div class="py-10 max-w-7xl mx-auto grid grid-cols-2 dark:text-zinc-100">
+    <section
+        class="py-10 max-w-7xl mx-auto grid grid-cols-2 dark:text-zinc-100">
         <div class="col-span-2">
             <h1
                 class="text-3xl lg:text-5xl font-bold text-center max-w-lg mx-auto leading-[1.2]">
                 Simplicity. <br /> Aesthetics. Value.
             </h1>
-            <p
+            <h4
                 class="max-w-lg mx-auto text-base px-4 lg:px-0 lg:text-lg text-center mt-6 lg:mt-10 font-medium dark:text-zinc-400">
                 Hi there, I'm a Frontend Engineer & Student focused on
                 application for brands that like to have fun.
-            </p>
+            </h4>
             <div class="flex mt-10 gap-1 justify-center">
                 <Contact />
             </div>
@@ -69,13 +70,13 @@ const works = homePage.data.works;
                             src={data.image.url}
                             width={data.image.width / 1.5}
                             height={data.image.height / 1.5}
-                            alt={"Image"}
+                            alt={"Image of a person's selfie."}
                         />
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
     <Work works={works} />
 </Layout>
 

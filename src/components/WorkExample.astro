@@ -24,6 +24,7 @@ const { body, title, link, image, stack } = Astro.props;
         </div>
         <a
             href={link}
+            referrerpolicy="no-referrer"
             rel="external"
             target="_blank"
             class="group my-2 rounded-md border-2 dark:border-zinc-200 border-black hover:bg-black dark:hover:bg-zinc-200 py-2 px-4 transition font-bold hover:text-white dark:hover:text-zinc-700 flex justify-center items-center w-4/5 mx-auto lg:mx-0 lg:w-1/2">
@@ -44,12 +45,17 @@ const { body, title, link, image, stack } = Astro.props;
     </div>
     <div
         class="order-1 lg:order-1 border-2 rounded-md dark:border-zinc-200 border-zinc-600 overflow-hidden">
-        <a class="object-contain" href={link} target="_blank">
+        <a
+            class="object-contain"
+            href={link}
+            target="_blank"
+            referrerpolicy="no-referrer"
+            rel="external">
             <img
                 width={image.width}
                 height={image.height}
                 src={image.url}
-                alt={title}
+                alt={`${title}'s page screenshot.'`}
             />
         </a>
     </div>

@@ -11,20 +11,22 @@ export interface WorkInterface {
 }
 ---
 
-<div
-    class="lg:mt-15 pt-10 text-3xl lg:text-5xl dark:text-zinc-100 font-bold text-center max-w-lg mx-auto leading-[1.2]">
-    My work.
-</div>
-<div class="pt-6 lg:pt-20 lg:pb-32">
-    {
-        works.map((work: WorkInterface) => (
-            <WorkExample
-                title={work.header}
-                link={work.url}
-                body={work.body}
-                image={work.image}
-                stack={work.stack}
-            />
-        ))
-    }
-</div>
+<section>
+    <h3
+        class="lg:mt-15 pt-10 text-3xl lg:text-5xl dark:text-zinc-100 font-bold text-center max-w-lg mx-auto leading-[1.2]">
+        My work.
+    </h3>
+    <div class="pt-6 lg:pt-20 lg:pb-32">
+        {
+            works.map((work: WorkInterface) => (
+                <WorkExample
+                    title={work.header}
+                    link={work.url}
+                    body={work.body}
+                    image={work.image}
+                    stack={work.stack}
+                />
+            ))
+        }
+    </div>
+</section>
