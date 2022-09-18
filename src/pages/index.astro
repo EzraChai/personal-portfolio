@@ -2,6 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Work from "../components/Work.astro";
 import Contact from "../components/Contact.astro";
+import { Image } from "@astrojs/image/components";
 
 const response = await fetch(import.meta.env.GRAPHCMS_URL, {
     method: "POST",
@@ -65,12 +66,13 @@ const works = homePage.data.works;
                     <div
                         id="mask"
                         class="mask invisible relative w-8/10 h-8/10 overflow-hidden">
-                        <img
+                        <Image
+                            format={"webp"}
                             class="object-cover"
                             src={data.image.url}
                             width={data.image.width / 1.5}
                             height={data.image.height / 1.5}
-                            alt={"Image of a person's selfie."}
+                            alt={"Image of Ezra Chai's selfie."}
                         />
                     </div>
                 </div>

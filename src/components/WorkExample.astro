@@ -1,4 +1,5 @@
 ---
+import { Image } from "@astrojs/image/components";
 const { body, title, link, image, stack } = Astro.props;
 ---
 
@@ -51,7 +52,8 @@ const { body, title, link, image, stack } = Astro.props;
             target="_blank"
             referrerpolicy="no-referrer"
             rel="external">
-            <img
+            <Image
+                format="webp"
                 width={image.width}
                 height={image.height}
                 src={image.url}
