@@ -1,5 +1,6 @@
 ---
 import Contact from "./Contact.astro";
+import { Temporal } from "@js-temporal/polyfill";
 ---
 
 <footer class="lg:max-w-7xl mx-auto">
@@ -9,7 +10,7 @@ import Contact from "./Contact.astro";
             <Contact />
         </div>
         <h6 class="px-4 text-xs lg:text-sm dark:text-zinc-300 text-zinc-500">
-            © {new Date().getFullYear()} — All Rights Reserved
+            © {Temporal.Now.plainDateISO().year} — All Rights Reserved
         </h6>
     </div>
 </footer>
