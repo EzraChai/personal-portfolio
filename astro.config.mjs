@@ -6,13 +6,18 @@ import compress from "astro-compress";
 import robotsTxt from "astro-robots-txt";
 import image from "@astrojs/image";
 
-import partytown from "@astrojs/partytown";
-
 // https://astro.build/config
 export default defineConfig({
-  site: "https://ezrachai.pages.dev",
-  experimental: {
-    integrations: true
-  },
-  integrations: [react(), tailwind(), sitemap(), compress(), robotsTxt(), image(), partytown()]
+    site: "https://ezrachai.pages.dev",
+    experimental: {
+        integrations: true,
+    },
+    integrations: [
+        react(),
+        tailwind(),
+        sitemap(),
+        compress(),
+        robotsTxt(),
+        image(),
+    ],
 });
