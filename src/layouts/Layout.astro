@@ -44,28 +44,28 @@ const { title } = Astro.props;
             }
             window.localStorage.setItem("theme", theme);
         </script>
-        <style>
-            html {
-                font-family: "Raleway", system-ui, sans-serif !important;
-            }
-
-            * {
-                scrollbar-width: thin;
-                scrollbar-color: black white;
-            }
-
-            *::-webkit-scrollbar {
-                width: 12px; /* width of the entire scrollbar */
-            }
-
-            *::-webkit-scrollbar-track {
-                @apply bg-white dark:bg-black; /* color of the tracking area */
-            }
-
-            *::-webkit-scrollbar-thumb {
-                border: 3px solid black; /* creates padding around scroll thumb */
-                @apply rounded-full border-white bg-black dark:border-black dark:bg-white;
-            }
-        </style>
     </body>
+    <style>
+        html {
+            font-family: "Raleway", system-ui, sans-serif !important;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: black white;
+        }
+
+        *::-webkit-scrollbar {
+            width: 12px; /* width of the entire scrollbar */
+        }
+
+        *::-webkit-scrollbar-track {
+            @apply bg-white dark:bg-black; /* color of the tracking area */
+        }
+
+        *::-webkit-scrollbar-thumb {
+            border: 3px solid black; /* creates padding around scroll thumb */
+            @apply rounded-full border-white bg-black dark:border-black dark:bg-white;
+        }
+    </style>
 </html>

@@ -30,6 +30,7 @@ export default function DarkMode() {
             onClick={toggleDarkMode}>
             {theme === "light" ? (
                 <img
+                    aria-hidden="true"
                     alt={"Image of the sun"}
                     height={"20"}
                     width={"20"}
@@ -37,6 +38,7 @@ export default function DarkMode() {
                 />
             ) : (
                 <img
+                    aria-hidden="true"
                     alt={"Image of the moon"}
                     height={"20"}
                     width={"20"}

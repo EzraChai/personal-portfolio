@@ -17,13 +17,14 @@ const { body, title, link, image, stack } = Astro.props;
         <div class="flex flex-wrap justify-center lg:justify-start gap-2 mb-6">
             {
                 stack.map((tech: string) => (
-                    <div class="rounded-md bg-orange-web px-2 py-1 text-xs font-bold tracking-wider text-zinc-800 transition hover:cursor-default hover:bg-white hover:text-zinc-800 dark:hover:bg-zinc-900 dark:hover:text-zinc-100">
+                    <div class="bg-orange-web rounded-md px-2 py-1 text-xs font-bold tracking-wider text-zinc-800 transition hover:cursor-default hover:bg-white hover:text-zinc-800 dark:hover:bg-zinc-900 dark:hover:text-zinc-100">
                         {tech}
                     </div>
                 ))
             }
         </div>
         <a
+            type="button"
             href={link}
             referrerpolicy="no-referrer"
             rel="external"
@@ -32,6 +33,7 @@ const { body, title, link, image, stack } = Astro.props;
             See the live website
             <span class="ml-2">
                 <svg
+                    aria-hidden="true"
                     class="dark:fill-white group-hover:fill-zinc-100 dark:group-hover:fill-zinc-800 transition group-hover:translate-x-1.5"
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 24 24"
