@@ -1,7 +1,6 @@
 ---
 export interface Props {
     title: string;
-    imageUrl: string | null;
 }
 
 import "@fontsource/raleway/variable-full.css";
@@ -22,7 +21,6 @@ const { title, imageUrl } = Astro.props;
             content="Ezra Chai's personal page that shows what he does in his carrier and his motif."
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-        {imageUrl !== null && <link rel="preload" as="image" href={imageUrl} />}
         <meta
             name="google-site-verification"
             content="2idB28BG6UO_Q5gXgdzfuQGXL1SNWWEOoIWTxbNh6VU"
