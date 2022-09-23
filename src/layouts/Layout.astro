@@ -23,6 +23,10 @@ const { title, imageUrl } = Astro.props;
         />
         <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
         {imageUrl !== null && <link rel="preload" as="image" href={imageUrl} />}
+        <meta
+            name="google-site-verification"
+            content="2idB28BG6UO_Q5gXgdzfuQGXL1SNWWEOoIWTxbNh6VU"
+        />
         <meta name="generator" content={Astro.generator} />
     </head>
     <body class="dark:bg-zinc-900">
