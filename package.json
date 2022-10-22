@@ -13,9 +13,7 @@
         "@fontsource/raleway": "^4.5.10",
         "@js-temporal/polyfill": "^0.4.2",
         "astro": "^1.1.5",
-        "react-icons": "^4.4.0",
-        "react-typewriter-effect": "^1.1.0",
-        "typewriter-effect": "^2.19.0"
+        "react-icons": "^4.4.0"
     },
     "devDependencies": {
         "@astrojs/image": "^0.7.0",
