@@ -48,14 +48,28 @@ const works = homePage.data.works;
         class="py-10 max-w-7xl mx-auto grid grid-cols-2 dark:text-zinc-100">
         <div class="col-span-2">
             <h1
-                class="text-3xl lg:text-5xl font-bold text-center max-w-lg mx-auto leading-[1.2]">
+                class="mt-28 text-3xl lg:text-5xl font-bold text-center max-w-lg mx-auto leading-[1.2]">
                 Simplicity. <br /> Aesthetics. Value.
             </h1>
+            <div
+                class="container flex items-center justify-center mt-6 lg:mt-8 mx-auto">
+                <div class="bg-orange-web flex items-center px-4">
+                    <div
+                        id="text"
+                        class="font-bold text-lg lg:text-xl mr-1 text-center tracking-wide h-[30px]">
+                    </div>
+                    <div
+                        id="cursor"
+                        class="align-middle w-[2.5px] h-[20px] rounded-md animation-blink">
+                    </div>
+                </div>
+            </div>
             <p
-                class="max-w-lg mx-auto text-base px-4 lg:px-0 lg:text-lg text-center mt-6 lg:mt-10 font-medium dark:text-zinc-400">
-                Hi there, I'm a Frontend Engineer & Student focused on
-                application for brands that like to have fun.
+                class="mt-2 max-w-lg mx-auto flex justify-center text-base px-4 lg:px-0 lg:text-lg text-center font-medium dark:text-zinc-400">
+                I'm a Frontend Engineer & Student focused on application for
+                brands that like to have fun.
             </p>
+
             <div class="flex mt-10 gap-1 justify-center">
                 <Contact />
             </div>
@@ -81,6 +95,21 @@ const works = homePage.data.works;
     </section>
     <Work works={works} />
 </Layout>
+<style>
+    .animation-blink {
+        animation: blink 0.75s step-end infinite;
+    }
+
+    @keyframes blink {
+        from,
+        to {
+            background-color: transparent;
+        }
+        50% {
+            background-color: black;
+        }
+    }
+</style>
 <script
     is:inline
     src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.1/gsap.min.js"
@@ -125,4 +154,74 @@ const works = homePage.data.works;
             ease: Power2.easeOut,
         });
     });
+</script>
+<script>
+    // List of sentences
+    let _CONTENT = ["Hello!", "你好啊!", "Selamat Sejahtera!"];
+
+    // Current sentence being processed
+    let _PART = 0;
+
+    // Character number of the current sentence being processed
+    let _PART_INDEX = 0;
+
+    // Holds the handle returned from setInterval
+    let _INTERVAL_VAL: any;
+
+    // Element that holds the text
+    let _ELEMENT = document.querySelector("#text");
+
+    // Cursor element
+    let _CURSOR: any = document.querySelector("#cursor");
+
+    // Implements typing effect
+    function Type() {
+        if (_ELEMENT !== null && _CURSOR !== null) {
+            // Get substring with 1 characater added
+            let text = _CONTENT[_PART].substring(0, _PART_INDEX + 1);
+            _ELEMENT.innerHTML = text;
+            _PART_INDEX++;
+
+            // If full sentence has been displayed then start to delete the sentence after some time
+            if (text === _CONTENT[_PART]) {
+                // Hide the cursor
+                _CURSOR.style.display = "none";
+
+                clearInterval(_INTERVAL_VAL);
+                setTimeout(function () {
+                    _INTERVAL_VAL = setInterval(Delete, 100);
+                }, 1000);
+            }
+        }
+    }
+
+    // Implements deleting effect
+    function Delete() {
+        if (_ELEMENT !== null && _CURSOR !== null) {
+            // Get substring with 1 characater deleted
+            let text = _CONTENT[_PART].substring(0, _PART_INDEX - 1);
+            _ELEMENT.innerHTML = text;
+            _PART_INDEX--;
+
+            // If sentence has been deleted then start to display the next sentence
+            if (text === "") {
+                clearInterval(_INTERVAL_VAL);
+
+                // If current sentence was last then display the first one, else move to the next
+                if (_PART == _CONTENT.length - 1) _PART = 0;
+                else _PART++;
+
+                _PART_INDEX = 0;
+
+                // Start to display the next sentence after some time
+                setTimeout(function () {
+                    _CURSOR.style.display = "inline-block";
+                    _INTERVAL_VAL = setInterval(Type, 100);
+                }, 200);
+            }
+        }
+    }
+
+    // Start the typing effect on load
+    _INTERVAL_VAL = setInterval(Type, 100);
 </script>
