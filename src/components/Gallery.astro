@@ -1,0 +1,61 @@
+---
+import { Image } from "@astrojs/image/components";
+
+const response = await fetch(import.meta.env.GRAPHCMS_URL, {
+    method: "POST",
+    headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+    },
+    body: JSON.stringify({
+        query: `
+        {
+            galleries(first:9) {
+                id
+                image{
+                    url
+                    height
+                    width
+                }
+            }
+        }
+
+      	`,
+    }),
+});
+
+const { data } = await response.json();
+---
+
+<h1
+    class="mt-12 text-3xl lg:text-5xl font-bold text-center leading-[1.6] dark:text-zinc-50">
+    Everyone loves beautiful images.
+</h1>
+<h4
+    class="mt-2 mx-auto flex justify-center text-zinc-600 text-base px-4 lg:px-0 lg:text-lg text-center font-medium dark:text-zinc-400">
+    I'm no exception. <br />
+</h4>
+
+<h3
+    class="mt-14 mx-auto flex justify-center text-zinc-700 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
+    Here's my images generated using <a
+        class="px-2 hover:text-white transition"
+        href="https://openai.com/dall-e-2/">DALL·E 2 AI system</a
+    > .
+</h3>
+
+<div class="max-w-7xl mx-auto mb-24">
+    <div class="grid grid-cols-3 py-10 gap-10">
+        {
+            data.galleries.map(({ image }: any) => (
+                <Image
+                    format="webp"
+                    src={image.url}
+                    width={image.width}
+                    height={image.height}
+                    alt="Image"
+                />
+            ))
+        }
+    </div>
+</div>

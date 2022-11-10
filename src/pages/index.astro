@@ -3,6 +3,7 @@ import Layout from "../layouts/Layout.astro";
 import Work from "../components/Work.astro";
 import Contact from "../components/Contact.astro";
 import { Image } from "@astrojs/image/components";
+import Gallery from "../components/Gallery.astro";
 
 const response = await fetch(import.meta.env.GRAPHCMS_URL, {
     method: "POST",
@@ -86,7 +87,7 @@ const works = homePage.data.works;
                             src={data.image.url}
                             width={data.image.width / 1.5}
                             height={data.image.height / 1.5}
-                            alt={"Image of Ezra Chai's selfie."}
+                            alt={"Ezra Chai's selfie."}
                         />
                     </div>
                 </div>
@@ -94,6 +95,7 @@ const works = homePage.data.works;
         </div>
     </section>
     <Work works={works} />
+    <Gallery />
 </Layout>
 <style>
     .animation-blink {
