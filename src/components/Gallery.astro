@@ -28,10 +28,12 @@ const { data } = await response.json();
 ---
 
 <h1
-    class="mt-12 text-3xl lg:text-5xl font-bold text-center leading-[1.6] dark:text-zinc-50">
-    <span>Everyone loves</span>
-    <br class="lg:hidden" />
-    <span> beautiful images.</span>
+    class="hidden lg:block mt-12 text-5xl font-bold text-center dark:text-zinc-50">
+    Everyone loves beautiful images.
+</h1>
+<h1
+    class="lg:hidden mt-12 text-3xl font-bold text-center leading-[1.4] dark:text-zinc-50">
+    Everyone loves <br /> beautiful images.
 </h1>
 <h4
     class="mt-2 mx-auto flex justify-center text-zinc-600 text-base px-4 lg:px-0 lg:text-lg text-center font-medium dark:text-zinc-400">
@@ -39,15 +41,19 @@ const { data } = await response.json();
 </h4>
 
 <h3
-    class="mt-14 mx-auto justify-center flex text-zinc-700 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
+    class="hidden lg:flex mt-14 mx-auto justify-center text-zinc-700 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
     <p class="inline-block">
-        Here's my images generated<br class="lg:hidden" />
-        <span class="pl-[0.258rem]">using</span>
-        <span class="lg:hidden">DALL·E 2 AI system</span>
+        Here's my images generated using
         <a
-            class="hidden lg:inline-block hover:text-black dark:hover:text-white transition"
+            class="hover:text-black dark:hover:text-white transition"
             href="https://openai.com/dall-e-2/">DALL·E 2 AI system</a
         >.
+    </p>
+</h3>
+<h3
+    class="lg:hidden mt-14 mx-auto justify-center flex text-zinc-700 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
+    <p class="inline-block">
+        Here's my images generated<br />using DALL·E 2 AI system
     </p>
 </h3>
 
