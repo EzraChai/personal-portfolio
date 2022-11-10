@@ -37,18 +37,24 @@ const { data } = await response.json();
 </h4>
 
 <h3
-    class="mt-14 mx-auto flex justify-center text-zinc-700 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
-    Here's my images generated using <a
-        class="px-2 hover:text-white transition"
-        href="https://openai.com/dall-e-2/">DALL·E 2 AI system</a
-    > .
+    class="mt-14 mx-auto justify-center flex text-zinc-700 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
+    <div class="">
+        Here's my images generated <br class="lg:hidden" /> using <span
+            class="lg:hidden">DALL·E 2 AI system</span
+        >
+        <a
+            class="hidden lg:inline-block hover:text-white transition"
+            href="https://openai.com/dall-e-2/">DALL·E 2 AI system</a
+        >.
+    </div>
 </h3>
 
 <div class="max-w-7xl mx-auto mb-24">
-    <div class="grid grid-cols-3 py-10 gap-10">
+    <div class="grid grid-cols-1 lg:grid-cols-3 py-10 gap-10">
         {
             data.galleries.map(({ image }: any) => (
                 <Image
+                    class={"px-6 lg:px-0"}
                     format="webp"
                     src={image.url}
                     width={image.width}
