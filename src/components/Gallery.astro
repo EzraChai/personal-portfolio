@@ -41,7 +41,7 @@ const { data } = await response.json();
 </h4>
 
 <h3
-    class="hidden lg:flex mt-14 mx-auto justify-center text-zinc-700 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
+    class="hidden lg:flex mt-14 mx-auto justify-center text-zinc-600 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
     <p class="inline-block">
         Here's my images generated using
         <a
@@ -51,7 +51,7 @@ const { data } = await response.json();
     </p>
 </h3>
 <h3
-    class="lg:hidden mt-14 mx-auto justify-center flex text-zinc-700 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
+    class="lg:hidden mt-16 mx-auto justify-center flex text-zinc-600 text-base px-4 lg:px-0 lg:text-2xl text-center font-medium dark:text-zinc-400">
     <p class="inline-block">
         Here's my images generated<br />using DALL·E 2 AI system.
     </p>
@@ -62,7 +62,7 @@ const { data } = await response.json();
         {
             data.galleries.map(({ image }: any) => (
                 <Image
-                    class={"px-6 lg:px-0"}
+                    class={"overflow-hidden rounded-md px-6 lg:px-0"}
                     format="webp"
                     src={image.url}
                     width={image.width}
