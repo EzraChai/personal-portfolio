@@ -49,12 +49,12 @@ const works = homePage.data.works;
         class="py-10 max-w-7xl mx-auto grid grid-cols-2 dark:text-zinc-100">
         <div class="col-span-2">
             <h1
-                class="mt-8 lg:mt-28 text-3xl lg:text-5xl font-bold text-center max-w-lg mx-auto leading-[1.2]">
+                class="mt-8 lg:mt-12 text-3xl lg:text-5xl font-bold text-center max-w-lg mx-auto leading-[1.2]">
                 Simplicity. <br /> Aesthetics. Value.
             </h1>
             <div
                 class="container flex items-center justify-center mt-6 mx-auto">
-                <div class="bg-orange-web flex items-center px-4">
+                <div class="bg-orange-web flex items-center px-4 rounded-md">
                     <div
                         id="text"
                         class="font-bold text-lg lg:text-xl dark:text-black mr-1 text-center tracking-wide h-[28px]">
@@ -95,6 +95,25 @@ const works = homePage.data.works;
             </div>
         </div>
     </section>
+    <div class="absolute -z-[1] w-[100%] left-0 bottom-10">
+        <div class="marquee flex overflow-hidden select-none">
+            <ul
+                class="marquee-content gap-1 marquee-scroll flex-shrink-0 flex justify-around min-w-full dark:text-white text-zinc-100 font-[800] tracking-tight text-[4.5rem]">
+                <li>ezrachai</li>
+                <li>ezrachai</li>
+                <li>ezrachai</li>
+                <li>ezrachai</li>
+            </ul>
+            <ul
+                class="marquee-content gap-1 marquee-scroll flex-shrink-0 flex items-center justify-around min-w-full dark:text-white text-zinc-100 font-[800] tracking-tight text-[4.5rem]"
+                aria-hidden="true">
+                <li>ezrachai</li>
+                <li>ezrachai</li>
+                <li>ezrachai</li>
+                <li>ezrachai</li>
+            </ul>
+        </div>
+    </div>
     <Work works={works} />
     <Gallery />
 </Layout>
@@ -111,6 +130,18 @@ const works = homePage.data.works;
         50% {
             background-color: black;
         }
+    }
+
+    @keyframes scroll {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(calc(-100% - 1rem));
+        }
+    }
+    .marquee-scroll {
+        animation: scroll 10s linear infinite;
     }
 </style>
 <script

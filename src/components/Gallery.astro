@@ -60,11 +60,11 @@ const { data } = await response.json();
 </h3>
 
 <div class="max-w-7xl mx-auto mb-24">
-    <div class="grid grid-cols-1 lg:grid-cols-3 py-10 gap-10">
+    <div class="columns-3 py-10 gap-10">
         {
             data.galleries.map(({ image }: any) => (
                 <Image
-                    class={"overflow-hidden rounded-md px-6 lg:px-0"}
+                    class={"mb-10 overflow-hidden rounded-md px-6 lg:px-0"}
                     format="webp"
                     src={image.url}
                     width={image.width}
