@@ -1,14 +1,25 @@
 ---
 import DarkMode from "./DarkMode.tsx";
+import { Image } from "@astrojs/image/components";
+import ezra from "../../public/ezra.png";
 ---
 
 <header class="lg:max-w-7xl mx-auto mb-5 lg:mb-10">
-    <div class="py-4 lg:py-8 flex justify-between">
-        <h1
+    <div class="flex justify-between">
+        <div class="flex items-center">
+            <div class="rounded-full h-8 w-8 overflow-hidden">
+                <Image src={ezra} alt="logo for the ezrachai." />
+            </div>
+            <h1
+                class="dark:text-white mb-[0.4rem] text-black font-[800] ml-4 text-2xl py-4">
+                ezrachai.
+            </h1>
+        </div>
+        <!-- <h1
             class="dark:text-white font-[800] px-3 lg:px-8 tracking-tight text-xl lg:text-2xl">
             ezrachai
-        </h1>
-        <nav class="flex px-3 lg:px-8">
+        </h1> -->
+        <nav class="py-4 lg:py-6 flex px-3 lg:px-8">
             <DarkMode client:only="react" />
         </nav>
     </div>
