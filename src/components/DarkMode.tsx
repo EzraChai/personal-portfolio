@@ -3,7 +3,7 @@ import MoonSvg from "../images/Moon.svg";
 import { useEffect, useState } from "react";
 
 export default function DarkMode() {
-    const [theme, setTheme] = useState<string>(
+    const [theme, setTheme] = useState<string>(() =>
         localStorage.getItem("theme") ?? "light"
     );
 
