@@ -1,7 +1,7 @@
 ---
 import DarkMode from "./DarkMode.tsx";
-import { Image } from "@astrojs/image/components";
-import ezra from "../../public/ezra.png";
+import { Image } from 'astro:assets'
+import ezra from "../assets/ezra.png"
 ---
 
 <header class="lg:max-w-7xl mx-auto mb-5 lg:mb-10">
@@ -16,10 +16,6 @@ import ezra from "../../public/ezra.png";
                 ezrachai.
             </h1>
         </div>
-        <!-- <h1
-            class="dark:text-white font-[800] px-3 lg:px-8 tracking-tight text-xl lg:text-2xl">
-            ezrachai
-        </h1> -->
         <nav class="py-4 lg:py-6 flex px-3 lg:px-8">
             <DarkMode client:only="react" />
         </nav>

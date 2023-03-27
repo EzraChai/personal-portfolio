@@ -1,5 +1,6 @@
 ---
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets'
+
 
 const response = await fetch(import.meta.env.GRAPHCMS_URL, {
     method: "POST",

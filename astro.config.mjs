@@ -4,13 +4,12 @@ import tailwind from "@astrojs/tailwind";
 import sitemap from "@astrojs/sitemap";
 import compress from "astro-compress";
 import robotsTxt from "astro-robots-txt";
-import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-    site: "https://ezrachai.pages.dev",
+    site: "https://ezrachai.pages.dev/",
     experimental: {
-        integrations: true,
+        assets: true
     },
     integrations: [
         react(),
@@ -18,6 +17,5 @@ export default defineConfig({
         sitemap(),
         compress(),
         robotsTxt(),
-        image(),
     ],
 });

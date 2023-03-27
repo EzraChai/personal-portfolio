@@ -2,7 +2,7 @@
 import Layout from "../layouts/Layout.astro";
 import Work from "../components/Work.astro";
 import Contact from "../components/Contact.astro";
-import { Image } from "@astrojs/image/components";
+import { Image } from 'astro:assets'
 import Gallery from "../components/Gallery.astro";
 
 const response = await fetch(import.meta.env.GRAPHCMS_URL, {
